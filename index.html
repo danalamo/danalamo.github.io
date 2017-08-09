@@ -1,1 +1,763 @@
-<h1>Hello World</h1>
+<!DOCTYPE html>
+<html class="js no-touch csstransitions csstransforms csstransforms3d" lang="en-US" prefix="og: http://ogp.me/ns#">
+<head>
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
+	<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+	<title>Six essential JavaScript libraries - James K Nelson</title><!--[if lte IE 9]>
+        <script src="http://jamesknelson.com/wp-content/themes/read/js/html5shiv.js"></script>
+        <script src="http://jamesknelson.com/wp-content/themes/read/js/selectivizr-min.js"></script>
+    <![endif]-->
+	<meta content="" name="description">
+	<meta content="" name="keywords"><!-- This site is optimized with the Yoast SEO plugin v3.4.2 - https://yoast.com/wordpress/plugins/seo/ -->
+	<link href="http://jamesknelson.com/six-essential-javascript-libraries/" rel="canonical">
+	<meta content="en_US" property="og:locale">
+	<meta content="article" property="og:type">
+	<meta content="Six essential JavaScript libraries - James K Nelson" property="og:title">
+	<meta content="Have you ever found yourself searching through the 153,882 packages on npm (as of the time of writing), sure that there must be something which solves your problem, but bewildered by your inability to find it? You’re not alone! The abundance of packages in the JavaScript ecosystem can at times feel more like a curse... Continue reading →" property="og:description">
+	<meta content="http://jamesknelson.com/six-essential-javascript-libraries/" property="og:url">
+	<meta content="James K Nelson" property="og:site_name">
+	<meta content="Javascript" property="article:section">
+	<meta content="2015-06-05T13:13:29+00:00" property="article:published_time">
+	<meta content="2015-10-06T08:43:59+00:00" property="article:modified_time">
+	<meta content="2015-10-06T08:43:59+00:00" property="og:updated_time">
+	<meta content="summary" name="twitter:card">
+	<meta content="Have you ever found yourself searching through the 153,882 packages on npm (as of the time of writing), sure that there must be something which solves your problem, but bewildered by your inability to find it? You’re not alone! The abundance of packages in the JavaScript ecosystem can at times feel more like a curse... Continue reading →" name="twitter:description">
+	<meta content="Six essential JavaScript libraries - James K Nelson" name="twitter:title">
+	<meta content="@james_k_nelson" name="twitter:site">
+	<meta content="@james_k_nelson" name="twitter:creator"><!-- / Yoast SEO plugin. -->
+	<link href="//w.sharethis.com" rel="dns-prefetch">
+	<link href="//fonts.googleapis.com" rel="dns-prefetch">
+	<link href="//s.w.org" rel="dns-prefetch">
+	<link href="http://jamesknelson.com/feed/" rel="alternate" title="James K Nelson » Feed" type="application/rss+xml">
+	<link href="http://jamesknelson.com/comments/feed/" rel="alternate" title="James K Nelson » Comments Feed" type="application/rss+xml">
+	<link href="http://jamesknelson.com/six-essential-javascript-libraries/feed/" rel="alternate" title="James K Nelson » Six essential JavaScript libraries Comments Feed" type="application/rss+xml">
+</head>
+<body>
+	<div class="fit-vids-style">
+		&shy;
+		<style>
+		             .fluid-width-video-wrapper {                 width: 100%;                              position: relative;                       padding: 0;                            }                                                                                   .fluid-width-video-wrapper iframe,        .fluid-width-video-wrapper object,        .fluid-width-video-wrapper embed {           position: absolute;                       top: 0;                                   left: 0;                                  width: 100%;                              height: 100%;                          }                                       
+		</style>
+	</div>
+	<script async src="//www.google-analytics.com/analytics.js">
+	</script>
+	<script id="twitter-wjs" src="http://platform.twitter.com/widgets.js">
+	</script>
+	<script id="facebook-jssdk" src="//connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v2.6">
+	</script>
+	<script type="text/javascript">
+	           window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/jamesknelson.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.7.5"}};
+	           !function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),!(j.toDataURL().length<3e3)&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,65039,8205,55356,57096),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,55356,57096),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55357,56425,55356,57341,8205,55357,56507),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55357,56425,55356,57341,55357,56507),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+	</script>
+	<script defer src="http://jamesknelson.com/wp-includes/js/wp-emoji-release.min.js?ver=4.7.5" type="text/javascript">
+	</script>
+	<style type="text/css">
+	img.wp-smiley,
+	img.emoji {
+	   display: inline !important;
+	   border: none !important;
+	   box-shadow: none !important;
+	   height: 1em !important;
+	   width: 1em !important;
+	   margin: 0 .07em !important;
+	   vertical-align: -0.1em !important;
+	   background: none !important;
+	   padding: 0 !important;
+	}
+	</style>
+	<link href="//fonts.googleapis.com/css?family=Indie+Flower&amp;ver=4.7.5" id="ssbaFont-css" media="all" rel="stylesheet" type="text/css">
+	<link href="http://fonts.googleapis.com/css?family=UnifrakturMaguntia&amp;subset=latin" id="unifrakturmaguntia-css" media="all" rel="stylesheet" type="text/css">
+	<link href="http://fonts.googleapis.com/css?family=Coustard&amp;subset=latin" id="coustard-css" media="all" rel="stylesheet" type="text/css">
+	<link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&amp;subset=latin" id="lora-css" media="all" rel="stylesheet" type="text/css">
+	<link href="http://jamesknelson.com/wp-content/themes/read/css/print.css" id="print-css" media="print" rel="stylesheet" type="text/css">
+	<link href="http://jamesknelson.com/wp-content/themes/read/css/grid.css" id="grid-css" media="all" rel="stylesheet" type="text/css">
+	<link href="http://jamesknelson.com/wp-content/themes/read/css/normalize.css" id="normalize-css" media="all" rel="stylesheet" type="text/css">
+	<link href="http://jamesknelson.com/wp-content/themes/read/css/font-awesome.css" id="font-awesome-css" media="all" rel="stylesheet" type="text/css">
+	<link href="http://jamesknelson.com/wp-content/themes/read/js/google-code-prettify/prettify.css" id="google-code-prettify-css" media="all" rel="stylesheet" type="text/css">
+	<link href="http://jamesknelson.com/wp-content/themes/read/css/uniform.default.css" id="uniform-css" media="all" rel="stylesheet" type="text/css">
+	<link href="http://jamesknelson.com/wp-content/themes/read/css/flexslider.css" id="flexslider-css" media="all" rel="stylesheet" type="text/css">
+	<link href="http://jamesknelson.com/wp-content/themes/read/css/gamma-gallery.css" id="gamma-gallery-css" media="all" rel="stylesheet" type="text/css">
+	<link href="http://jamesknelson.com/wp-content/themes/read/css/main.css" id="main-css" media="all" rel="stylesheet" type="text/css">
+	<link href="http://jamesknelson.com/wp-content/themes/read/css/jquery.fancybox-1.3.4.css" id="fancybox-css" media="all" rel="stylesheet" type="text/css">
+	<link href="http://jamesknelson.com/wp-content/themes/read/css/wp-fix.css" id="wp-fix-css" media="all" rel="stylesheet" type="text/css">
+	<link href="http://jamesknelson.com/wp-content/plugins/wp-markdown/css/prettify.css?ver=1.5.1" id="wp-markdown-prettify-css" media="all" rel="stylesheet" type="text/css">
+	<script src="http://jamesknelson.com/wp-includes/js/jquery/jquery.js?ver=1.12.4" type="text/javascript">
+	</script> 
+	<script src="http://jamesknelson.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1" type="text/javascript">
+	</script> 
+	<script src="http://jamesknelson.com/wp-content/plugins/wp-markdown/js/prettify.min.js?ver=1.5.1" type="text/javascript">
+	</script> 
+	<script src="http://jamesknelson.com/wp-content/plugins/wp-markdown/js/markdown.min.js?ver=1.5.1" type="text/javascript">
+	</script>
+	<link href="http://jamesknelson.com/wp-json/" rel="https://api.w.org/">
+	<link href="http://jamesknelson.com/xmlrpc.php?rsd" rel="EditURI" title="RSD" type="application/rsd+xml">
+	<link href="http://jamesknelson.com/wp-includes/wlwmanifest.xml" rel="wlwmanifest" type="application/wlwmanifest+xml">
+	<meta content="WordPress 4.7.5" name="generator">
+	<link href="http://jamesknelson.com/?p=225" rel="shortlink">
+	<link href="http://jamesknelson.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fjamesknelson.com%2Fsix-essential-javascript-libraries%2F" rel="alternate" type="application/json+oembed">
+	<link href="http://jamesknelson.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fjamesknelson.com%2Fsix-essential-javascript-libraries%2F&amp;format=xml" rel="alternate" type="text/xml+oembed">
+	<script>
+	(function(d, s, id){
+	                var js, fjs = d.getElementsByTagName(s)[0];
+	                if (d.getElementById(id)) {return;}
+	                js = d.createElement(s); js.id = id;
+	                js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6";
+	                fjs.parentNode.insertBefore(js, fjs);
+	              }(document, 'script', 'facebook-jssdk'));
+	</script>
+	<style type="text/css">
+	   .ssba {
+	                                   
+	                                   
+	                                   
+	                                   
+	                               }
+	                               .ssba img
+	                               {
+	                                   width: 35px !important;
+	                                   padding: 6px;
+	                                   border:  0;
+	                                   box-shadow: none !important;
+	                                   display: inline !important;
+	                                   vertical-align: middle;
+	                               }
+	                               .ssba, .ssba a
+	                               {
+	                                   text-decoration:none;
+	                                   border:0;
+	                                   background: none;
+	                                   font-family: Indie Flower;
+	                                   font-size:  20px;
+	                                   
+	                                   
+	                               }
+	                               .fb_iframe_widget span { width: 146px !important; }.ssba_sharecount:after, .ssba_sharecount:before {
+	                                   right: 100%;
+	                                   border: solid transparent;
+	                                   content: " ";
+	                                   height: 0;
+	                                   width: 0;
+	                                   position: absolute;
+	                                   pointer-events: none;
+	                               }
+	                               .ssba_sharecount:after {
+	                                   border-color: rgba(224, 221, 221, 0);
+	                                   border-right-color: #f5f5f5;
+	                                   border-width: 5px;
+	                                   top: 50%;
+	                                   margin-top: -5px;
+	                               }
+	                               .ssba_sharecount:before {
+	                                   border-color: rgba(85, 94, 88, 0);
+	                                   border-right-color: #e0dddd;
+	                                   border-width: 6px;
+	                                   top: 50%;
+	                                   margin-top: -6px;
+	                               }
+	                               .ssba_sharecount {
+	                                   font: 11px Arial, Helvetica, sans-serif;
+
+	                                   padding: 5px;
+	                                   -khtml-border-radius: 6px;
+	                                   -o-border-radius: 6px;
+	                                   -webkit-border-radius: 6px;
+	                                   -moz-border-radius: 6px;
+	                                   border-radius: 6px;
+	                                   position: relative;
+	                                   border: 1px solid #e0dddd;color: #555e58;
+	                                       background: #f5f5f5;
+	                                   }
+	                                   .ssba_sharecount:after {
+	                                       border-right-color: #f5f5f5;
+	                                   }
+	</style>
+	<link href="http://jamesknelson.com/wp-content/themes/read/style.css" rel="stylesheet" type="text/css">
+	<style type="text/css">
+	a { color: #b30e2f; }
+
+
+
+
+
+
+	</style>
+	<style type="text/css">
+	h1.site-title a {
+	 border-bottom: none !important;  
+	}
+
+	.main-navigation {
+	 border: none !important;
+	display: none;
+	}
+
+	.spoiler {
+	position: relative;
+	}
+
+	.spoiler .spoiler-mask {
+	background-color: #fafae0;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 50;
+	}
+
+	.spoiler:hover .spoiler-mask {
+	display: none;
+	}
+
+	.site-header {
+	 padding-bottom: 1em;
+	}
+
+	h2 a, h3 a {
+	color: #444;
+	}
+
+	.entry-meta a, .nav-single a, .comment-meta a, .comment-reply-link, .navigation a, .post-pagination a, .related-posts a, .archives a, .tabs .tab-titles li a {
+	 color: #b30e2f;
+	}
+
+	.mailing-list {
+	 background-color: #E2F1FF;
+	 font-weight: bold;
+	 font-size: 16px;
+	 padding: 15px;
+	 width: 80%;
+	 margin: 0 auto;
+	 border-radius: 4px;
+	 text-align: center;
+	}
+	.mailing-list form {
+	 text-align: center;
+	 margin: 15px 0;
+	}
+	.mailing-list input {
+	 font-size: 16px;
+	 line-height: 24px;
+	 padding: 4px 8px;
+	 margin: 5px 0;
+	}
+	.mailing-list input[type=submit] {
+	 margin: 15px 0 0;
+	 font-size: 16px;
+	 line-height: 24px;
+	 padding: 4px 8px;
+	 border-radius: 4px;
+	 background-color: #b30e2f;
+	}
+
+	.ssba > div {
+	 margin-top: 80px;
+	 text-align: center !important;
+	}
+
+
+
+	code {
+	   box-shadow: none;
+	   border: none;
+	   background-color: #f8f8f8;
+	margin: 0;
+	}
+
+	pre.prettyprint {
+	   background: none;
+	   box-shadow: none;
+	   border: none;
+	   background-color: #f8f8f8;
+	}
+
+	pre.prettyprint > code {
+	       display: block;
+	}
+
+	h1.site-title {
+	 font-size: 4em;
+	}
+
+	.hint {
+	 background-color: #fcf8e3;
+	 border: 1px solid #faebcc;
+	 border-radius: 4px; 
+	 padding: 15px;
+	 margin-top: 20px;
+	}
+
+	h1 code,
+	h2 code,
+	h3 code,
+	h4 code,
+	h5 code,
+	h6 code {
+	 font-size: inherit;
+	}
+
+	.inline-mailing-list {
+	 width: 280px;
+	 margin: 0 auto;
+	 text-align: center;
+	 padding: 15px;
+	 border-radius: 6px;
+	 background-color: #f0f0f0;
+	}
+	.inline-mailing-list h4 {
+	 border-left: none;
+	 padding-left: 0;
+	 font-size: 18px;
+	 margin: 0;
+	}
+	.inline-mailing-list form {
+	 text-align: center;
+	 margin: 5px 0;
+	}
+	.inline-mailing-list input {
+	 font-size: 14px;
+	 line-height: 18px;
+	 padding: 4px 8px;
+	 margin: 5px 0;
+	 border-radius: 3px !important;
+	 width: 100% !important;
+	}
+	.inline-mailing-list button[type=submit] {
+	 margin: 5px 0 0;
+	 font-size: 16px;
+	 line-height: 24px;
+	 padding: 6px 8px;
+	 border-radius: 4px;
+	 background-color: #b30e2f;
+	 width: 100%;
+	}
+
+	blockquote {
+	 margin: 1em 0 0 0;
+	 padding: 1em 3em 1em 3em;
+	}
+	</style>
+	<link href="/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57">
+	<link href="/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60">
+	<link href="/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72">
+	<link href="/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76">
+	<link href="/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114">
+	<link href="/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120">
+	<link href="/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144">
+	<link href="/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152">
+	<link href="/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180">
+	<link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+	<link href="/favicon-194x194.png" rel="icon" sizes="194x194" type="image/png">
+	<link href="/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png">
+	<link href="/android-chrome-192x192.png" rel="icon" sizes="192x192" type="image/png">
+	<link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+	<link href="/manifest.json" rel="manifest">
+	<meta content="#da532c" name="msapplication-TileColor">
+	<meta content="/mstile-144x144.png" name="msapplication-TileImage">
+	<meta content="#ffffff" name="theme-color">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js" type="text/javascript">
+	</script>
+	<script async charset="utf-8" src="https://platform.twitter.com/js/button.c794c32aa66923d37742ceab3914757c.js" type="text/javascript">
+	</script>
+	<style type="text/css">
+	.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+	.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(http://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(http://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(http://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_loader{background-color:#f6f7f9;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(http://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(http://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(http://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(http://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(http://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(http://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{width:auto;height:auto;min-height:initial;min-width:initial;background:none}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{color:#fff;display:block;padding-top:20px;clear:both;font-size:18px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;bottom:0;left:0;right:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #29487d;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(http://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f6f7f9;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(http://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-repeat:no-repeat;background-position:50% 50%;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+	.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(http://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}
+	</style>
+	<div class="search-mobile">
+		<a href="http://jamesknelson.com/thank-you-for-subscribing/">Thank you for subscribing!</a>
+	</div>
+	<div class="hfeed site" id="page">
+		<header class="site-header wrapper" role="banner">
+			<div class="row">
+				<hgroup>
+					<h1 class="site-title"><a href="http://jamesknelson.com/" rel="home">James K Nelson</a></h1><!-- end .site-title -->
+					<h2 class="site-description"></h2><!-- end .site-description -->
+				</hgroup>
+				<nav class="main-navigation" id="site-navigation" role="navigation">
+					<div class="selector" style="display: none; width: 98px;">
+						<span style="width: 73px;">MENU</span><select class="menu" style="opacity: 0; left: 2px; width: 271.84px;">
+							<option value="null">
+								MENU
+							</option>
+							<option value="http://jamesknelson.com/thank-you-for-subscribing/">
+								Thank you for subscribing!
+							</option>
+						</select>
+					</div>
+					<ul class="menu-default">
+						<li class="page_item page-item-368">
+							<a href="http://jamesknelson.com/thank-you-for-subscribing/">Thank you for subscribing!</a>
+						</li>
+					</ul>
+				</nav><!-- end #site-navigation -->
+			</div><!-- end .row -->
+		</header><!-- end .site-header -->
+		<section class="middle wrapper" id="main">
+			<div class="row row-fluid blog-with-sidebar">
+				<div class="site-content span12" id="primary">
+					<div id="content" role="main">
+						<div class="blog-single">
+							<article class="clearfix post-225 post type-post status-publish format-standard hentry category-javascript" id="post-225">
+								<header class="entry-header">
+									<h1 class="entry-title">Six essential JavaScript libraries</h1>
+								</header><!-- end .entry-header -->
+								<div class="entry-meta">
+									<span class="post-category">posted in <a href="http://jamesknelson.com/category/javascript/" rel="category tag">Javascript</a></span> <!-- end .post-category -->
+									 <span class="post-date">on <a href="http://jamesknelson.com/six-essential-javascript-libraries/" rel="bookmark" title="1:13 pm"><time class="entry-date" datetime="2012-11-09T23:15:57+00:00">June 5, 2015</time></a></span> <!-- end .post-date -->
+									 <span class="by-author">by <span class="author vcard"><a class="url fn n" href="http://jamesknelson.com/author/jamesknelson/" rel="author" title="View all posts by James K Nelson">James K Nelson</a></span> <!-- end .author --></span> <!-- end .by-author -->
+								</div><!-- end .entry-meta -->
+								<div class="entry-content clearfix">
+									<p>Have you ever found yourself searching through the 153,882 packages on npm (as of the time of writing), sure that there must be <em>something</em> which solves your problem, but bewildered by your inability to find it? You’re not alone!</p>
+									<p>The abundance of packages in the JavaScript ecosystem can at times feel more like a curse than a blessing – all the code in the world can’t help you if you don’t know where to find it. However, the great thing about well designed libraries is that you only need a few of them to get you a long way.</p>
+									<p>With that in mind, here are six of the libraries I use to solve problems in my web and node projects. In alphabetical order:</p>
+									<p><span id="more-225"></span></p>
+									<h2>1. <a href="https://github.com/mzabriskie/axios">axios</a></h2>
+									<p>XMLHttpRequest is one of those technologies that I find myself both loving and hating at the same time. Without it, the modern web wouldn’t exist, but the times I’ve been forced to actually use it have made me want to cry.</p>
+									<p>I’m obviously not the only one – there are a plethora of libraries built to try and make XMLHttpRequest easier. <a href="https://visionmedia.github.io/superagent/">Superagent</a> and <a href="https://github.com/request/request">request</a> are two popular ones which lack Promise support, while jQuery’s <code>jQuery.ajax</code> and Angular’s $http service comes close, but with the problem that they’re both only available when you include their monstrous associated frameworks.</p>
+									<p>Enter axios – the XMLHttpRequest library which takes the good parts from Angular’s $http, and throws out everything else. Here is an example of it’s use:</p>
+									<h3>With axios</h3>
+									<pre class="prettyprint"><code><span class="pln"><span class="pln">axios</span></span><span class="pun"><span class="pun">({</span></span><span class="pln"><span class="pln">
+    url</span></span><span class="pun"><span class="pun">:</span></span><span class="pln"><span class="pln"> </span></span><span class="str"><span class="str">'http://readyourlevel.jamesknelson.com/api/grade'</span></span><span class="pun"><span class="pun">,</span></span><span class="pln"><span class="pln">
+    method</span></span><span class="pun"><span class="pun">:</span></span><span class="pln"><span class="pln"> </span></span><span class="str"><span class="str">'post'</span></span><span class="pun"><span class="pun">,</span></span><span class="pln"><span class="pln">
+    headers</span></span><span class="pun"><span class="pun">:</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="str"><span class="str">'Content-type'</span></span><span class="pun"><span class="pun">:</span></span><span class="pln"><span class="pln"> </span></span><span class="str"><span class="str">'text/html; charset=UTF-8'</span></span><span class="pun"><span class="pun">},</span></span><span class="pln"><span class="pln">
+    data</span></span><span class="pun"><span class="pun">:</span></span><span class="pln"><span class="pln"> text
+</span></span><span class="pun"><span class="pun">}).</span></span><span class="kwd"><span class="kwd">then</span></span><span class="pun"><span class="pun">(</span></span><span class="pln"><span class="pln">onGradeResult</span></span><span class="pun"><span class="pun">,</span></span><span class="pln"><span class="pln"> onGradeError</span></span><span class="pun"><span class="pun">)</span></span></code></pre>
+									<h3>Without axios</h3>
+									<pre class="prettyprint"><code><span class="pln"><span class="pln">let http </span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln"> </span></span><span class="kwd"><span class="kwd">new</span></span><span class="pln"><span class="pln"> </span></span><span class="typ"><span class="typ">XMLHttpRequest</span></span><span class="pun"><span class="pun">();</span></span><span class="pln"><span class="pln">
+http</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">open</span></span><span class="pun"><span class="pun">(</span></span><span class="str"><span class="str">"POST"</span></span><span class="pun"><span class="pun">,</span></span><span class="pln"><span class="pln"> </span></span><span class="str"><span class="str">'http://readyourlevel.jamesknelson.com/api/grade'</span></span><span class="pun"><span class="pun">,</span></span><span class="pln"><span class="pln"> </span></span><span class="kwd"><span class="kwd">true</span></span><span class="pun"><span class="pun">);</span></span><span class="pln"><span class="pln">
+http</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">setRequestHeader</span></span><span class="pun"><span class="pun">(</span></span><span class="str"><span class="str">'Content-type'</span></span><span class="pun"><span class="pun">,</span></span><span class="pln"><span class="pln"> </span></span><span class="str"><span class="str">'text/html; charset=UTF-8'</span></span><span class="pun"><span class="pun">);</span></span><span class="pln"><span class="pln">
+http</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">onreadystatechange </span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln"> </span></span><span class="kwd"><span class="kwd">function</span></span><span class="pun"><span class="pun">()</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln">
+    </span></span><span class="kwd"><span class="kwd">if</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">(</span></span><span class="pln"><span class="pln">http</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">readyState </span></span><span class="pun"><span class="pun">==</span></span><span class="pln"><span class="pln"> </span></span><span class="lit"><span class="lit">4</span></span><span class="pun"><span class="pun">)</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln">
+        </span></span><span class="kwd"><span class="kwd">if</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">(</span></span><span class="pln"><span class="pln">http</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">status </span></span><span class="pun"><span class="pun">==</span></span><span class="pln"><span class="pln"> </span></span><span class="lit"><span class="lit">200</span></span><span class="pun"><span class="pun">)</span></span><span class="pln"><span class="pln">
+            onGradeResult</span></span><span class="pun"><span class="pun">(</span></span><span class="pln"><span class="pln">JSON</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">parse</span></span><span class="pun"><span class="pun">(</span></span><span class="pln"><span class="pln">http</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">responseText</span></span><span class="pun"><span class="pun">));</span></span><span class="pln"><span class="pln">
+        </span></span><span class="kwd"><span class="kwd">else</span></span><span class="pln"><span class="pln">
+            onGradeError</span></span><span class="pun"><span class="pun">(</span></span><span class="pln"><span class="pln">http</span></span><span class="pun"><span class="pun">);</span></span><span class="pln"><span class="pln">
+    </span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln">
+</span></span><span class="pun"><span class="pun">};</span></span><span class="pln"><span class="pln">
+http</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">onerror </span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln"> onGradeError</span></span><span class="pun"><span class="pun">;</span></span><span class="pln"><span class="pln">
+http</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">send</span></span><span class="pun"><span class="pun">(</span></span><span class="pln"><span class="pln">text</span></span><span class="pun"><span class="pun">);</span></span></code></pre>
+									<h2>2. <a href="https://github.com/es-shims/es5-shim">es5-shim</a> and <a href="https://github.com/paulmillr/es6-shim/">es6-shim</a></h2>
+									<p>I’ve lumped these two together, as they do basically the same thing. That is, they make all sorts of ECMAscripty goodness available to you even while hobbled by old-school browsers (without the overhead of an entire build process). No JavaScript developer in their right mind <em>doesn’t</em> want ECMAscripty goodness.</p>
+									<p>Of course, no amount of shimming is going to bring you to the promised land of arrow functions, destructuring and generators – but Set, Map, WeakSet, Promises, etc. are certainly better than nothing.</p>
+									<p>That said, there is one function from es6-shim which makes so many tasks so much easier that it justifies the shim’s use all by itself. Here’s an example from my project <a href="https://github.com/jamesknelson/numbat-ui">numbat-ui</a>.</p>
+									<h3>With es6-shim</h3>
+									<pre class="prettyprint"><code><span class="kwd"><span class="kwd">var</span></span><span class="pln"><span class="pln"> targetProps </span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln"> </span></span><span class="typ"><span class="typ">Object</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">assign</span></span><span class="pun"><span class="pun">({},</span></span><span class="pln"><span class="pln"> </span></span><span class="kwd"><span class="kwd">this</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">managedCallbacks</span></span><span class="pun"><span class="pun">,</span></span><span class="pln"><span class="pln"> other</span></span><span class="pun"><span class="pun">,</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln">disabled</span></span><span class="pun"><span class="pun">:</span></span><span class="pln"><span class="pln"> disabled</span></span><span class="pun"><span class="pun">});</span></span></code></pre>
+									<h3>Without es6-shim</h3>
+									<pre class="prettyprint"><code><span class="kwd"><span class="kwd">var</span></span><span class="pln"><span class="pln"> targetProps </span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{};</span></span><span class="pln"><span class="pln">
+</span></span><span class="kwd"><span class="kwd">for</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">(</span></span><span class="pln"><span class="pln">key </span></span><span class="kwd"><span class="kwd">in</span></span><span class="pln"><span class="pln"> </span></span><span class="kwd"><span class="kwd">this</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">managedCallbacks</span></span><span class="pun"><span class="pun">)</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln">
+    </span></span><span class="kwd"><span class="kwd">if</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">(</span></span><span class="kwd"><span class="kwd">this</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">managedCallbacks</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">hasOwnProperty</span></span><span class="pun"><span class="pun">(</span></span><span class="pln"><span class="pln">key</span></span><span class="pun"><span class="pun">))</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln">
+        targetProps</span></span><span class="pun"><span class="pun">[</span></span><span class="pln"><span class="pln">key</span></span><span class="pun"><span class="pun">]</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln"> </span></span><span class="kwd"><span class="kwd">this</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">managedCallbacks</span></span><span class="pun"><span class="pun">[</span></span><span class="pln"><span class="pln">key</span></span><span class="pun"><span class="pun">];</span></span><span class="pln"><span class="pln">
+    </span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln">
+</span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln">
+</span></span><span class="kwd"><span class="kwd">for</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">(</span></span><span class="pln"><span class="pln">key </span></span><span class="kwd"><span class="kwd">in</span></span><span class="pln"><span class="pln"> other</span></span><span class="pun"><span class="pun">)</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln">
+    </span></span><span class="kwd"><span class="kwd">if</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">(</span></span><span class="pln"><span class="pln">other</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">hasOwnProperty</span></span><span class="pun"><span class="pun">(</span></span><span class="pln"><span class="pln">key</span></span><span class="pun"><span class="pun">))</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln">
+        targetProps</span></span><span class="pun"><span class="pun">[</span></span><span class="pln"><span class="pln">key</span></span><span class="pun"><span class="pun">]</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln"> other</span></span><span class="pun"><span class="pun">[</span></span><span class="pln"><span class="pln">key</span></span><span class="pun"><span class="pun">];</span></span><span class="pln"><span class="pln">
+    </span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln">
+</span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln">
+targetProps</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">disabled </span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln"> disabled</span></span><span class="pun"><span class="pun">;</span></span></code></pre>
+									<p>Check out <a href="https://twitter.com/kangax">@kangax</a>‘s amazing <a href="http://kangax.github.io/compat-table/es5/">ES5</a> and <a href="http://kangax.github.io/compat-table/es6/">ES6</a> compatibility tables for details on what es5-shim and es6-shim support, or if you really want everything ES6 has to offer, consider investing in learning <a href="https://babeljs.io/">Babel</a>.</p>
+									<h2>3. <a href="http://highlandjs.org/">Highland</a></h2>
+									<p>ES6 Promises are wonderful and all, but <a href="http://jamesknelson.com/grokking-es6-promises-the-four-functions-you-need-to-avoid-callback-hell/">as awesome as <code>Promise.all</code> is</a>, there are still times when the complexity of your asynchronous code makes you want to pull your hair out.</p>
+									<p>While use of <a href="https://github.com/petkaantonov/bluebird">bluebird</a> and co. can help, they still offer a fundamentally <em>promise-focussed</em> approach, where sometimes what is needed is a completely different abstraction.</p>
+									<p>One example from my recent work was a node.js web scraper for <a href="http://www.aozora.gr.jp/">Aozora Bunko</a>. While the HTTP client I used rightly returns a promise from each HTTP request, looking at the bigger picture shows a flow of data from the original request, through UTF-8 and HTML parsers, through filters, into more HTTP requests, and yet more parsers. What I really needed was to treat my data as a <em>stream</em>.</p>
+									<p>Highland makes working with streams easy, and cleverly works <em>with</em> your promises instead of asking you to throw away your existing friends and only play with <em>it</em>. Here is some relevant code, with highland manifesting itself as <code>_</code>:</p>
+									<h3>With Highland</h3>
+									<pre class="prettyprint"><code><span class="pln"><span class="pln">let pipeline </span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln"> _</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">pipeline</span></span><span class="pun"><span class="pun">(</span></span><span class="pln"><span class="pln">
+    _</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">map</span></span><span class="pun"><span class="pun">((</span></span><span class="pln"><span class="pln">data</span></span><span class="pun"><span class="pun">)</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">=&gt;</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln">
+        </span></span><span class="com"><span class="com">// Make Japanese keys from CSV to English to fit RYG's database</span></span><span class="pln"><span class="pln">
+        let result </span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{};</span></span><span class="pln"><span class="pln">
+        KEYS</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">forEach</span></span><span class="pun"><span class="pun">(([</span></span><span class="pln"><span class="pln">key</span></span><span class="pun"><span class="pun">,</span></span><span class="pln"><span class="pln"> newKey</span></span><span class="pun"><span class="pun">],</span></span><span class="pln"><span class="pln"> i</span></span><span class="pun"><span class="pun">)</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">=&gt;</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln">
+            </span></span><span class="kwd"><span class="kwd">if</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">(</span></span><span class="pln"><span class="pln">data</span></span><span class="pun"><span class="pun">[</span></span><span class="pln"><span class="pln">key</span></span><span class="pun"><span class="pun">])</span></span><span class="pln"><span class="pln"> result</span></span><span class="pun"><span class="pun">[</span></span><span class="pln"><span class="pln">newKey</span></span><span class="pun"><span class="pun">]</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln"> data</span></span><span class="pun"><span class="pun">[</span></span><span class="pln"><span class="pln">key</span></span><span class="pun"><span class="pun">];</span></span><span class="pln"><span class="pln">
+        </span></span><span class="pun"><span class="pun">});</span></span><span class="pln"><span class="pln">
+        result
+    </span></span><span class="pun"><span class="pun">}),</span></span><span class="pln"><span class="pln">
+    _</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">filter</span></span><span class="pun"><span class="pun">((</span></span><span class="pln"><span class="pln">data</span></span><span class="pun"><span class="pun">)</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">=&gt;</span></span><span class="pln"><span class="pln"> data</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">characterType </span></span><span class="pun"><span class="pun">==</span></span><span class="pln"><span class="pln"> </span></span><span class="str"><span class="str">'新字新仮名'</span></span><span class="pun"><span class="pun">),</span></span><span class="pln"><span class="pln">
+    _</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">ratelimit</span></span><span class="pun"><span class="pun">(</span></span><span class="lit"><span class="lit">2</span></span><span class="pun"><span class="pun">,</span></span><span class="pln"><span class="pln"> </span></span><span class="lit"><span class="lit">100</span></span><span class="pun"><span class="pun">),</span></span><span class="pln"><span class="pln">
+    _</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">flatMap</span></span><span class="pun"><span class="pun">((</span></span><span class="pln"><span class="pln">data</span></span><span class="pun"><span class="pun">)</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">=&gt;</span></span><span class="pln"><span class="pln"> _</span></span><span class="pun"><span class="pun">(</span></span><span class="pln"><span class="pln">axios</span></span><span class="pun"><span class="pun">({</span></span><span class="pln"><span class="pln">url</span></span><span class="pun"><span class="pun">:</span></span><span class="pln"><span class="pln"> data</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">url</span></span><span class="pun"><span class="pun">,</span></span><span class="pln"><span class="pln"> headers</span></span><span class="pun"><span class="pun">:</span></span><span class="pln"><span class="pln"> HEADERS</span></span><span class="pun"><span class="pun">}).</span></span><span class="kwd"><span class="kwd">then</span></span><span class="pun"><span class="pun">(</span></span><span class="pln"><span class="pln">getBookContentHtml</span></span><span class="pun"><span class="pun">)))</span></span><span class="pln"><span class="pln">
+</span></span><span class="pun"><span class="pun">);</span></span></code></pre>
+									<h3>Without Highland</h3>
+									<p>I’ll leave this as an exercise for the serious reader. Leave a comment if you manage to get it.</p>
+									<h2>4. <a href="https://lodash.com/">lodash</a></h2>
+									<p>For people who’ve come to JavaScript after some experience with batteries-included languages like Ruby or Python, it is almost inevitable that at some point you’ll have the “there is <em>no way</em> that this function isn’t built in” moment. Or if you’re like me, you’ll never stop having them. E.g.</p>
+									<ul>
+										<li>I wonder what the method to get the last element of an array is? <em>What, it doesn’t exist?!</em></li>
+										<li>Seems I’ve forgotten the method to get the sum of an array’s elements. <em>Nope. I never learned it in the first place because it doesn’t exist.</em></li>
+										<li>Surely javascript has a function to do a deep copy of an object? <em>Nope?! What the fuck were the Netscape gods smoking?!</em></li>
+									</ul>
+									<p>Lodash fixes this – it is JavaScript’s batteries, so to speak. It provides a huge number of helpful functions and a pleasant-to-use interface.</p>
+									<p>Here is an example from the Japanese Grader used at <a href="http://www.readyourgrade.com">Read Your Grade</a> of why you should use lodash:</p>
+									<h3>With lodash</h3>
+									<pre class="prettyprint"><code><span class="pln"><span class="pln">let furiganaSummary </span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln"> _</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">chain</span></span><span class="pun"><span class="pun">(</span></span><span class="pln"><span class="pln">kanjiTokens</span></span><span class="pun"><span class="pun">)</span></span><span class="pln"><span class="pln">
+  </span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">groupBy</span></span><span class="pun"><span class="pun">(</span></span><span class="str"><span class="str">'key'</span></span><span class="pun"><span class="pun">)</span></span><span class="pln"><span class="pln">
+  </span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">mapValues</span></span><span class="pun"><span class="pun">((</span></span><span class="pln"><span class="pln">tokens</span></span><span class="pun"><span class="pun">)</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">=&gt;</span></span><span class="pln"><span class="pln"> _</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">countBy</span></span><span class="pun"><span class="pun">(</span></span><span class="pln"><span class="pln">tokens</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">map</span></span><span class="pun"><span class="pun">((</span></span><span class="pln"><span class="pln">t</span></span><span class="pun"><span class="pun">)</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">=&gt;</span></span><span class="pln"><span class="pln"> t</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">furiganaType</span></span><span class="pun"><span class="pun">)))</span></span><span class="pln"><span class="pln">
+  </span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">value</span></span><span class="pun"><span class="pun">();</span></span></code></pre>
+									<h3>Without lodash</h3>
+									<pre class="prettyprint"><code><span class="pln"><span class="pln">let furiganaSummary </span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{};</span></span><span class="pln"><span class="pln">
+</span></span><span class="kwd"><span class="kwd">for</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">(</span></span><span class="pln"><span class="pln">let kanjiToken of kanjiTokens</span></span><span class="pun"><span class="pun">)</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln">
+    let key </span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln"> kanjiToken</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">key</span></span><span class="pun"><span class="pun">;</span></span><span class="pln"><span class="pln">
+    </span></span><span class="kwd"><span class="kwd">if</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">(</span></span><span class="pln"><span class="pln">furiganaSummary</span></span><span class="pun"><span class="pun">[</span></span><span class="pln"><span class="pln">key</span></span><span class="pun"><span class="pun">])</span></span><span class="pln"><span class="pln">
+        furiganaSummary</span></span><span class="pun"><span class="pun">[</span></span><span class="pln"><span class="pln">key</span></span><span class="pun"><span class="pun">].</span></span><span class="pln"><span class="pln">push</span></span><span class="pun"><span class="pun">(</span></span><span class="pln"><span class="pln">kanjiToken</span></span><span class="pun"><span class="pun">);</span></span><span class="pln"><span class="pln">
+    </span></span><span class="kwd"><span class="kwd">else</span></span><span class="pln"><span class="pln">
+        furiganaSummary</span></span><span class="pun"><span class="pun">[</span></span><span class="pln"><span class="pln">key</span></span><span class="pun"><span class="pun">]</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">[</span></span><span class="pln"><span class="pln">kanjiToken</span></span><span class="pun"><span class="pun">];</span></span><span class="pln"><span class="pln">
+</span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln">
+</span></span><span class="kwd"><span class="kwd">for</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">(</span></span><span class="pln"><span class="pln">let key </span></span><span class="kwd"><span class="kwd">in</span></span><span class="pln"><span class="pln"> furiganaSummary</span></span><span class="pun"><span class="pun">)</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln">
+    let typeCounts </span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{};</span></span><span class="pln"><span class="pln">
+    </span></span><span class="kwd"><span class="kwd">for</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">(</span></span><span class="pln"><span class="pln">let kanjiToken of furiganaSummary</span></span><span class="pun"><span class="pun">[</span></span><span class="pln"><span class="pln">key</span></span><span class="pun"><span class="pun">])</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln">
+        let furiganaType </span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln"> kanjiToken</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">furiganaType</span></span><span class="pun"><span class="pun">;</span></span><span class="pln"><span class="pln">
+        </span></span><span class="kwd"><span class="kwd">if</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">(</span></span><span class="pln"><span class="pln">typeCounts</span></span><span class="pun"><span class="pun">[</span></span><span class="pln"><span class="pln">furiganaType</span></span><span class="pun"><span class="pun">]</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">===</span></span><span class="pln"><span class="pln"> </span></span><span class="kwd"><span class="kwd">undefined</span></span><span class="pun"><span class="pun">)</span></span><span class="pln"><span class="pln">
+            typeCounts</span></span><span class="pun"><span class="pun">[</span></span><span class="pln"><span class="pln">furiganaType</span></span><span class="pun"><span class="pun">]</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln"> </span></span><span class="lit"><span class="lit">1</span></span><span class="pun"><span class="pun">;</span></span><span class="pln"><span class="pln">
+        </span></span><span class="kwd"><span class="kwd">else</span></span><span class="pln"><span class="pln">
+            typeCounts</span></span><span class="pun"><span class="pun">[</span></span><span class="pln"><span class="pln">furiganaType</span></span><span class="pun"><span class="pun">]</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">+=</span></span><span class="pln"><span class="pln"> </span></span><span class="lit"><span class="lit">1</span></span><span class="pun"><span class="pun">;</span></span><span class="pln"><span class="pln">
+    </span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln">
+    furiganaSummary</span></span><span class="pun"><span class="pun">[</span></span><span class="pln"><span class="pln">key</span></span><span class="pun"><span class="pun">]</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln"> typeCounts</span></span><span class="pun"><span class="pun">;</span></span><span class="pln"><span class="pln">
+</span></span><span class="pun"><span class="pun">}</span></span></code></pre>
+									<h2>5. <a href="http://momentjs.com/">Moment.js</a></h2>
+									<p>Do you find yourself looking up JavaScript’s date-related functions every time you need to touch one? Maybe you long for the simplicity of Rails’ ActiveSupport where <code>1.day_ago</code> actually is a Date object. Or worse, maybe you just avoid working with dates at all. After all, surely the user can’t find “Fri Jun 05 2015 13:27:39 GMT+0900 (JST)” that much harder to read than “1 minute ago”, right?</p>
+									<p>Moment.js fixes this by providing an incredibly simple interface and a number of powerful functions for working with dates, times and time periods. Here is an example from some accounting software I manage:</p>
+									<h3>With moment.js</h3>
+									<pre class="prettyprint"><code><span class="pln"><span class="pln">let dateString </span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln"> moment</span></span><span class="pun"><span class="pun">().</span></span><span class="pln"><span class="pln">subtract</span></span><span class="pun"><span class="pun">(</span></span><span class="str"><span class="str">'month'</span></span><span class="pun"><span class="pun">,</span></span><span class="pln"><span class="pln"> </span></span><span class="lit"><span class="lit">1</span></span><span class="pun"><span class="pun">).</span></span><span class="pln"><span class="pln">endOf</span></span><span class="pun"><span class="pun">(</span></span><span class="str"><span class="str">'month'</span></span><span class="pun"><span class="pun">).</span></span><span class="pln"><span class="pln">format</span></span><span class="pun"><span class="pun">(</span></span><span class="str"><span class="str">"YYYY-MM-DD"</span></span><span class="pun"><span class="pun">);</span></span></code></pre>
+									<h3>Without moment.js</h3>
+									<pre class="prettyprint"><code><span class="pln"><span class="pln">let now </span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln"> </span></span><span class="kwd"><span class="kwd">new</span></span><span class="pln"><span class="pln"> </span></span><span class="typ"><span class="typ">Date</span></span><span class="pun"><span class="pun">();</span></span><span class="pln"><span class="pln">
+let month </span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">((</span></span><span class="pln"><span class="pln">now</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">getMonth</span></span><span class="pun"><span class="pun">()</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">+</span></span><span class="pln"><span class="pln"> </span></span><span class="lit"><span class="lit">11</span></span><span class="pun"><span class="pun">)</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">%</span></span><span class="pln"><span class="pln"> </span></span><span class="lit"><span class="lit">12</span></span><span class="pun"><span class="pun">)</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">+</span></span><span class="pln"><span class="pln"> </span></span><span class="lit"><span class="lit">1</span></span><span class="pun"><span class="pun">;</span></span><span class="pln"><span class="pln">
+let year </span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln"> month </span></span><span class="pun"><span class="pun">==</span></span><span class="pln"><span class="pln"> </span></span><span class="lit"><span class="lit">12</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">?</span></span><span class="pln"><span class="pln"> now</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">getFullYear</span></span><span class="pun"><span class="pun">()</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">-</span></span><span class="pln"><span class="pln"> </span></span><span class="lit"><span class="lit">1</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">:</span></span><span class="pln"><span class="pln"> now</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">getFullYear</span></span><span class="pun"><span class="pun">();</span></span><span class="pln"><span class="pln">
+let leapYear </span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln"> thisYear </span></span><span class="pun"><span class="pun">%</span></span><span class="pln"><span class="pln"> </span></span><span class="lit"><span class="lit">4</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">==</span></span><span class="pln"><span class="pln"> </span></span><span class="lit"><span class="lit">0</span></span><span class="pun"><span class="pun">;</span></span><span class="pln"><span class="pln">
+let days </span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">[</span></span><span class="lit"><span class="lit">31</span></span><span class="pun"><span class="pun">,</span></span><span class="pln"><span class="pln"> leapYear </span></span><span class="pun"><span class="pun">?</span></span><span class="pln"><span class="pln"> </span></span><span class="lit"><span class="lit">29</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">:</span></span><span class="pln"><span class="pln"> </span></span><span class="lit"><span class="lit">28</span></span><span class="pun"><span class="pun">,</span></span><span class="pln"><span class="pln"> </span></span><span class="lit"><span class="lit">31</span></span><span class="pun"><span class="pun">,</span></span><span class="pln"><span class="pln"> </span></span><span class="lit"><span class="lit">30</span></span><span class="pun"><span class="pun">,</span></span><span class="pln"><span class="pln"> </span></span><span class="lit"><span class="lit">31</span></span><span class="pun"><span class="pun">,</span></span><span class="pln"><span class="pln"> </span></span><span class="lit"><span class="lit">30</span></span><span class="pun"><span class="pun">,</span></span><span class="pln"><span class="pln"> </span></span><span class="lit"><span class="lit">31</span></span><span class="pun"><span class="pun">,</span></span><span class="pln"><span class="pln"> </span></span><span class="lit"><span class="lit">31</span></span><span class="pun"><span class="pun">,</span></span><span class="pln"><span class="pln"> </span></span><span class="lit"><span class="lit">30</span></span><span class="pun"><span class="pun">,</span></span><span class="pln"><span class="pln"> </span></span><span class="lit"><span class="lit">31</span></span><span class="pun"><span class="pun">,</span></span><span class="pln"><span class="pln"> </span></span><span class="lit"><span class="lit">30</span></span><span class="pun"><span class="pun">,</span></span><span class="pln"><span class="pln"> </span></span><span class="lit"><span class="lit">31</span></span><span class="pun"><span class="pun">];</span></span><span class="pln"><span class="pln">
+let paddedMonth </span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln"> month </span></span><span class="pun"><span class="pun">&lt;</span></span><span class="pln"><span class="pln"> </span></span><span class="lit"><span class="lit">10</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">?</span></span><span class="pln"><span class="pln"> </span></span><span class="str"><span class="str">`0${month}`</span></span><span class="pln"><span class="pln"> </span></span><span class="kwd"><span class="kwd">else</span></span><span class="pln"><span class="pln"> month
+let parts </span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln"> </span></span><span class="str"><span class="str">`${year}-${paddedMonth}-${days[month - 1]}`</span></span><span class="pun"><span class="pun">;</span></span></code></pre>
+									<h2>6. <a href="http://numeraljs.com/">Numeral.js</a></h2>
+									<p>Almost every project needs to display formatted numbers. Examples include:</p>
+									<ul>
+										<li>formatting currency with the correct number of decimal places</li>
+										<li>truncating long floating point numbers to one or two numbers after the decimal</li>
+										<li>padding numbers in dates (like in the above example)</li>
+									</ul>
+									<p>In most languages, you’d have an inbuilt function to help with this – but not in javascript (notice the theme yet?)! So how do you fix it?</p>
+									<p>Well, you <em>can</em> just format each number manually, but this gets tiring fast. An alternative common solution is to add your own formatting-related helper functions, but this still gets confusing when they start to change between projects, and why spend the time writing your own if you don’t <em>have</em> to?</p>
+									<p>And you don’t! Numeral.js is a simple library which makes this a breeze, and allows you to learn a single API which you can then transfer to any project which your boss/customer/curiosity presents you with. While it may not seem to be that much effort to do this manually in the short term, the benefits from Numeral.js compound over time. Heres an example from my <a href="http://www.readyourgrade.com">Read Your Grade</a> project:</p>
+									<h3>With numeral.js</h3>
+									<pre class="prettyprint"><code><span class="pln"><span class="pln">let formattedNumber </span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln"> numeral</span></span><span class="pun"><span class="pun">(</span></span><span class="pln"><span class="pln">bookScore</span></span><span class="pun"><span class="pun">).</span></span><span class="pln"><span class="pln">format</span></span><span class="pun"><span class="pun">(</span></span><span class="str"><span class="str">'0.0'</span></span><span class="pun"><span class="pun">);</span></span></code></pre>
+									<h3>Without numeral.js</h3>
+									<pre class="prettyprint"><code><span class="pln"><span class="pln">let formattedNumber </span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln"> </span></span><span class="str"><span class="str">`${parseInt(bookScope)}.${((bookScore % 1) + '')[2]}`</span></span><span class="pun"><span class="pun">;</span></span></code></pre>
+									<p>Sure, they’re both one line – but which one would you rather read/type?</p>
+									<h2>Honorary Mention: <a href="https://github.com/pozadi/kefir">Kefir</a></h2>
+									<p>Kefir is a Functional Reactive Programming tool which can make wiring up user interfaces <em>fun</em> again. I’ve been using it together with Facebook’s <a href="http://facebook.github.io/react/">React</a> while building <a href="https://github.com/jamesknelson/numbat-ui">numbat-ui</a> and thoroughly enjoying it. It’s source is lightweight and easy to read, and the API feels well-designed.</p>
+									<p>So why only an honorary mention? Well, while searching for awesome examples of my usage of Kefir, I couldn’t find any single blocks of code which screamed “wow, this shows just how must time Kefir will save you”. That said, I’m still new to FRP, so this doesn’t mean they’ll never happen. Indeed, my gut feeling is that building UIs with Kefir/React uses such a different thought process to jQuery or Angular that the code which would normally feel painful just doesn’t materialise in the first place.</p>
+									<p>Kefir/React is something I’d like to write on again in the future once I have more experience (and code) with it. Subscribe to my newsletter to make sure you don’t miss out when I do!</p>
+									<p>In return for your e-mail, you’ll also immediately receive 2 bonus <em>print-optimised</em> PDF cheatsheets – on <a href="http://jamesknelson.com/wp-content/uploads/2015/09/es6-cheatsheet-thumbnail.png">ES6</a> and <a href="http://jamesknelson.com/wp-content/uploads/2015/09/promises-cheatsheet-thumbnail.png">JavaScript promises</a>.</p>
+									<script src="https://app.convertkit.com/assets/CKJS4.js?v=21">
+									</script>
+									<style type="text/css">
+									/* Layout */
+									.ck_form {
+									/* divider image */
+									background: #fff url(data:image/gif;base64,R0lGODlhAQADAIABAMzMzP///yH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS41LWMwMTQgNzkuMTUxNDgxLCAyMDEzLzAzLzEzLTEyOjA5OjE1ICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MUQ5NjM5RjgxQUVEMTFFNEJBQTdGNTQwMjc5MTZDOTciIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MUQ5NjM5RjkxQUVEMTFFNEJBQTdGNTQwMjc5MTZDOTciPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDoxRDk2MzlGNjFBRUQxMUU0QkFBN0Y1NDAyNzkxNkM5NyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDoxRDk2MzlGNzFBRUQxMUU0QkFBN0Y1NDAyNzkxNkM5NyIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PgH//v38+/r5+Pf29fTz8vHw7+7t7Ovq6ejn5uXk4+Lh4N/e3dzb2tnY19bV1NPS0dDPzs3My8rJyMfGxcTDwsHAv769vLu6ubi3trW0s7KxsK+urayrqqmop6alpKOioaCfnp2cm5qZmJeWlZSTkpGQj46NjIuKiYiHhoWEg4KBgH9+fXx7enl4d3Z1dHNycXBvbm1sa2ppaGdmZWRjYmFgX15dXFtaWVhXVlVUU1JRUE9OTUxLSklIR0ZFRENCQUA/Pj08Ozo5ODc2NTQzMjEwLy4tLCsqKSgnJiUkIyIhIB8eHRwbGhkYFxYVFBMSERAPDg0MCwoJCAcGBQQDAgEAACH5BAEAAAEALAAAAAABAAMAAAICRFIAOw==) repeat-y center top;
+									font-family: 'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif;
+									line-height: 1.5em;
+									overflow: hidden;
+									color: #666;
+									font-size: 16px;
+									border-top: solid 20px #3071b0;
+									border-top-color: #b30e2f;
+									border-bottom: solid 10px #3d3d3d;
+									border-bottom-color: #5f0719;
+									-webkit-box-shadow: 0px 0px 5px rgba(0,0,0,.3);
+									-moz-box-shadow: 0px 0px 5px rgba(0,0,0,.3);
+									box-shadow: 0px 0px 5px rgba(0,0,0,.3);
+									clear: both;
+									margin: 20px 0px;
+									}
+
+									.ck_form * {
+									-webkit-box-sizing: border-box;
+									-moz-box-sizing: border-box;
+									box-sizing: border-box;
+									}
+
+									#ck_subscribe_form {
+									clear: both;
+									}
+
+									/* Element Queries —&nbsp;uses JS */
+
+									.ck_form_content, .ck_form_fields {
+									width: 50%;
+									float: left;
+									padding: 5%;
+									}
+
+									.ck_form.ck_horizontal {
+									}
+
+									.ck_form_content {
+									border-bottom: none;
+									}
+
+									.ck_form.ck_vertical {
+									background: #fff;
+									}
+
+									.ck_vertical .ck_form_content, .ck_vertical .ck_form_fields {
+									padding: 10%;
+									width: 100%;
+									float: none;
+									}
+
+									.ck_vertical .ck_form_content {
+									border-bottom: 1px dotted #aaa;
+									overflow: hidden;
+									}
+
+									/* Trigger the vertical layout with media queries as well */
+
+									@media all and (max-width: 499px) {
+
+									.ck_form {
+									background: #fff;
+									}
+
+									.ck_form_content, .ck_form_fields {
+									padding: 10%;
+									width: 100%;
+									float: none;
+									}
+
+									.ck_form_content {
+									border-bottom: 1px dotted #aaa;
+									}
+
+									}
+
+									/* Content */
+
+									.ck_form_content h3 {
+									margin: 0px 0px 15px;
+									font-size: 24px;
+									padding: 0px;
+									}
+
+
+									.ck_form_content p {
+									font-size: 14px;
+									}
+
+									.ck_image {
+									float: left;
+									margin-right: 5px;
+									}
+
+									/* Form fields */
+
+									.ck_errorArea {
+									display: none;
+									}
+
+									#ck_success_msg {
+									padding: 10px 10px 0px;
+									border: solid 1px #ddd;
+									background: #eee;
+									}
+
+									.ck_label {
+									font-size: 14px;
+									font-weight: bold;
+									}
+
+									.ck_form input[type="text"], .ck_form input[type="email"] {
+									font-size: 14px;
+									padding: 10px 8px;
+									width: 100%;
+									border: 1px solid #d6d6d6; /* stroke */
+									-moz-border-radius: 4px;
+									-webkit-border-radius: 4px;
+									border-radius: 4px; /* border radius */
+									background-color: #f8f7f7; /* layer fill content */
+									margin-bottom: 5px;
+									height: auto;
+									}
+
+									.ck_form input[type="text"]:focus, .ck_form input[type="email"]:focus {
+									outline: none;
+									border-color: #aaa;
+									}
+
+									.ck_checkbox {
+									padding: 10px 0px 10px 20px;
+									display: block;
+									clear: both;
+									}
+
+									.ck_checkbox input.optIn {
+									margin-left: -20px;
+									margin-top: 0;
+									}
+									.ck_form .ck_opt_in_prompt {
+									margin-left: 4px;
+									}
+									.ck_form .ck_opt_in_prompt p {
+									display: inline;
+									}
+
+									.ck_form .ck_subscribe_button {
+									width: 100%;
+									color: #fff;
+									margin: 10px 0px 0px;
+									padding:  10px 0px;
+									font-size: 18px;
+									background: #b30e2f;
+									-moz-border-radius: 4px;
+									-webkit-border-radius: 4px;
+									border-radius: 4px; /* border radius */
+									cursor: pointer;
+									border: none;
+									text-shadow: none;
+									}
+
+
+									.ck_form .ck_guarantee {
+									color: #626262;
+									font-size: 12px;
+									text-align: center;
+									padding: 5px 0px;
+									display: block;
+									}
+
+									.ck_form .ck_powered_by {
+									display: block;
+									color: #aaa;
+									}
+
+									.ck_form .ck_powered_by:hover {
+									display: block;
+									color: #444;
+									}
+
+									.ck_converted_content {
+									display: none;
+									padding: 5%;
+									background: #fff;
+									}
+
+
+
+									</style>
+								</div><!-- end .entry-content -->
+							</article><!-- end .hentry -->
+							<!-- end .nav-single -->
+						</div><!-- end .blog-single -->
+					</div><!-- end #content -->
+				</div><!-- end #primary -->
+			</div>
+		</section>
+		<footer class="site-footer wrapper" role="contentinfo">
+			<div class="row">
+				<div class="row-fluid" id="supplementary"></div>
+				<div class="site-info">
+					© 2015 James K Nelson
+				</div>
+			</div>
+		</footer>
+	</div>
+</body>
+</html>
