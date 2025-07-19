@@ -59613,15 +59613,15 @@ var render = function() {
                       _vm._v(" "),
                       _c("br"),
                       _vm._v(" "),
-                      _c("sui-button", {
-                        staticClass: "raise",
-                        attrs: {
-                          loading: _vm.loadingVerse,
-                          color: "brown",
-                          content: "Daily Bible Verse"
-                        },
-                        on: { click: _vm.getVerse }
-                      })
+                    //   _c("sui-button", {
+                    //     staticClass: "raise",
+                    //     attrs: {
+                    //       loading: _vm.loadingVerse,
+                    //       color: "brown",
+                    //       content: "Daily Bible Verse"
+                    //     },
+                    //     on: { click: _vm.getVerse }
+                    //   })
                     ],
                     1
                   )
